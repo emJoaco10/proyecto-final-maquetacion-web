@@ -1,0 +1,260 @@
+/* font-family: "Red Hat Mono", monospace;
+font-family: "Victor Mono", monospace; */
+
+/* NORMALIZACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Victor Mono", monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+body{
+    background-color: black;
+}
+header{
+    position: fixed; /*Para que quede fijo*/
+    right: 0;
+    top: 0;
+    z-index: 100; /* Para que se superponga */
+    width: 100%;
+    display: flex; /* Para que los elementos se pongan en linea */
+    align-items: center; /* Se centra verticalmente */
+    justify-content: space-between; 
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: 800; /*Grueso de las letras*/
+
+}
+
+.navlist{
+display: flex; /*Para que los elementos se pongan en linea*/
+}
+
+.navlist a{
+    margin-left: 60px; /*Separar elementos*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+
+#menu-icon{
+    display: none; /*Esta en none para que solo se vea cuando la pagina colapsa*/
+} 
+
+#menu-icon{
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon-action{
+    display: none;
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31314e 0%, #383c70 25%, #131313 75%);
+    position: relative; /* nos permite usar top, right, left y bottom */
+    display: grid; /* para que el hero se pueda dividir en 2 columnas*/
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text h1{
+    font-family: "Red Hat Mono", monospace;
+    font-size: 40px;
+   line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 7px;
+    transition: all 5s linear;
+}
+
+.hero-img img:hover{
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #34353c;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.redes{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.redes i{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover{
+    color: #31314e;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(5px);
+}
+
+/* Aca se usan mediaqueris para hacer la web responsive */
+
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+    .hero-text p{
+        font-size: 70%;
+    }
+    
+    .icons{
+        display: none;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .menu-icon-action{
+        display: block;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }   
+    .hero-img{
+        margin: 0;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #080429e2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+}
